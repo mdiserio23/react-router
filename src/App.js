@@ -6,12 +6,14 @@ function App() {
   return (
     <>
       <MainHeader />
-      <Route path="/welcome">
-        <Welcome></Welcome>
-      </Route>
-      <Route path="/products">
-        <Products></Products>
-      </Route>
+      <main>
+        <Route path="/welcome">
+          <Welcome></Welcome>
+        </Route>
+        <Route path="/products">
+          <Products></Products>
+        </Route>
+      </main>
     </>
   );
 }
