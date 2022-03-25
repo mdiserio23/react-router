@@ -1,18 +1,24 @@
-import { Route } from "react-router";
+import { Route, Switch } from "react-router";
 import MainHeader from "./components/MainHeader";
 import Products from "./pages/Products";
+import ProductsDetail from "./pages/ProductsDetail";
 import Welcome from "./pages/Welcome";
 function App() {
   return (
     <>
       <MainHeader />
       <main>
-        <Route path="/welcome">
-          <Welcome></Welcome>
-        </Route>
-        <Route path="/products">
-          <Products></Products>
-        </Route>
+        <Switch>
+          <Route path="/welcome">
+            <Welcome></Welcome>
+          </Route>
+          <Route path="/products" exact>
+            <Products></Products>
+          </Route>
+          <Route path="/products/:productId">
+            <ProductsDetail></ProductsDetail>
+          </Route>
+        </Switch>
       </main>
     </>
   );
